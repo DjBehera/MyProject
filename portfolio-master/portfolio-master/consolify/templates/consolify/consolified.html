@@ -1,0 +1,13 @@
+{% extends 'consolify/base.html'%}
+{% load staticfiles %}
+{% block content%}
+<form action="{% static '' %}{{message}}" enctype="multipart/form-data" method="POST">
+    <div class="container">
+	  {% csrf_token %}
+
+      <label for="id"><b><font color="green">Your consolidated file</font></b></label>
+	  <br>
+      <button class="btn" type="Upload" >Download it!</button>
+    </div>
+  </form><br>
+{% endblock %}

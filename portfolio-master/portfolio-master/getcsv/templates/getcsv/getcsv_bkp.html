@@ -1,0 +1,18 @@
+{% load staticfiles %}
+
+
+<h1>!!!!SITE UNDER CONSTRUCTION!!!!</h1>
+{{error}}
+<input id="test" type="text"><br><br>
+
+<input type="button" onclick="newDoc()" value="Submit"></input>
+
+<script>
+function newDoc() {
+	var name = document.getElementById("test");
+    window.location.assign("{% static 'template_' %}"+name.value+".csv")
+}
+</script>
+
+</body>
+</html>

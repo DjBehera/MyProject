@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load staticfiles %}
+{% block content%}
+{% if error == 'dog' %}
+	<div class="container5">
+	<img src="{% static 'download.png' %}" height=100 width=100/>
+	</div>
+{% elif error == 'cat' %}
+	<div class="container4">
+	<img src="{% static 'download.png' %}" height=100 width=100/>
+	</div>
+{% else%}
+	<form action="{% url 'catsndogs' %}" enctype="multipart/form-data" method="POST">
+		<div class="container">
+		  <font color="red">{{error}}<font></b>
+		  <br>
+		  {% csrf_token %}
+		  <label for="name"><b><font color="white">Name<font></b></label>
+		  <input type="text" placeholder="Enter your name" name="name" >
+
+		  <label for="image"><b>ID</b></label>
+		  <input type="file" placeholder="Upload image " name="image" >
+		  <br><br>
+		  <button class="btn" type="Upload" >CHECK</button>
+		</div>
+	  </form><br>
+{% endif%}
+{% endblock %}

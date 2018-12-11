@@ -1,0 +1,11 @@
+{% extends 'consolify/base.html'%}
+{% block content%}
+    <div class="container">
+	  <font color="red">{{error}}<font></b>
+      <label for="name"><b><font color="white">Template ID<font></b></label>
+	  <input id="test" type="text" placeholder="Enter the ID" name="id" >
+	  <br><br>
+      <input class="btn" type="button" onclick="newDoc()" value="Get Template!"></input>
+    </div>
+	<br>
+{% endblock %}

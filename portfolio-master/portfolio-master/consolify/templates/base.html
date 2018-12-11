@@ -1,0 +1,128 @@
+<html>
+<head>
+	{% load staticfiles %}
+	<style>
+		* {
+			box-sizing: border-box;
+			}
+
+		.btn {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: outset;
+			cursor: pointer;
+			width: 100%;
+			opacity: 0.9;
+			}
+
+			.btn:hover {
+			opacity: 1;
+			}
+		.container{
+			position: absolute;
+			bottom: 10;
+			right: 0;
+			margin: 30px;
+			max-width: 210px;
+			padding: 16px;
+			border: outset;
+			}
+		.container2{
+			position: absolute;
+			top: 100;
+			left: 0;
+			margin: 30px;
+			max-width: 400px;
+			padding: 16px;
+			letter-spacing: 1px;
+			}
+		.container3{
+			position: absolute;
+			top: -30;
+			left: 0;
+			margin: 32px;
+			max-width: 400px;
+			padding: 8px;
+			letter-spacing: 1px;
+			border: solid;
+			}	
+			input[type=text]{
+			width: 100%;
+			padding: 10px;
+			margin: 5px 0 10px 0;
+			border: none;
+			background: #f1f1f1;
+			}
+
+			input[type=text]:focus{
+			outline: none;
+			}
+			
+			.cover{
+			background-color:powderblue;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url("{% static 'employee-suffering-work-related-stress.jpg' %}");
+			letter-spacing: 3px;
+			
+			}
+
+			.topnav {
+			  overflow: hidden;
+			}
+
+			.topnav a {
+			  float: right;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			  font-size: 17px;
+			}
+			.topnav b {
+			  float: right;
+			  color: #f2f2f2;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+			  font-size: 17px;
+			}
+
+			.topnav a:hover {
+			  background-color: #ddd;
+			  color: black;
+			}
+
+			.topnav a.active {
+			  background-color: #a3c69d;
+			  color: black;
+			}
+
+	</style>
+</head>
+<body class="cover">
+<div class="container3">
+	<b style="float:left;" class='icon'><img src="{% static 'copyright.png' %}" height=30 width=30/><font color="#1a2322">ONSOLIFREE</font></b>
+</div>
+<div class="topnav">
+  <a class="active" href="{% url 'excel' %}">Home</a> 
+  <a href="{% url 'getcsv' %}">Template</a>
+  <a href="{% url 'master' %}">Admin</a>
+</div>
+<hr>
+<div class="container2">
+	<p><h1 style="font-size:30px;"><i><font color="#1a2322"><q>Stressed OUT consolidating excels for your manager?<br> Feeling LOST in this mess?</q></font><i></h1>
+	<h3><i><font color="#1a2322">CONSOLIFREE is here to help you in a single <a href="{% url 'consolify' %}">CLICK</a> !!</h3> </p>
+</div>
+{% block content%}  
+{% endblock %}
+ <script>
+function newDoc() {
+	var name = document.getElementById("test");
+    window.location.assign("{% static 'template_' %}"+name.value+".csv")
+}
+</script>  
+</body>
+</html>

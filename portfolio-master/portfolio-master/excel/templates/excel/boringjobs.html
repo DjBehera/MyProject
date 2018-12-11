@@ -1,0 +1,20 @@
+{% extends 'consolify/base.html'%}
+{% block content%}
+<form action="{% url 'excel' %}" enctype="multipart/form-data" method="POST">
+    <div class="container">
+	  <font color="red">{{error}}<font></b>
+	  <br>
+	  {% csrf_token %}
+      <label for="email"><b><font color="white">Username<font></b></label>
+	  <input type="text" placeholder="Enter your name" name="username" >
+
+      <label for="psw"><b>ID</b></label>
+      <input type="text" placeholder="Enter Template ID" name="id" >
+	  
+	  <label for="psw"><b>CSV File</b></label>
+      <input type="file" name="excel" style="width: 100%;" required>
+	  <br><br>
+      <button class="btn" type="Upload" >Submit</button>
+    </div>
+  </form><br>
+{% endblock %}

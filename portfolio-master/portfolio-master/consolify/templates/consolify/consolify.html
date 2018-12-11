@@ -1,0 +1,18 @@
+{% extends 'consolify/base.html'%}
+{% load staticfiles %}
+{% block content%}
+<form action="{% url 'consolify' %}" enctype="multipart/form-data" method="POST">
+    <div class="container">
+	  <font color="red">{{error}}<font></b>
+	  <br>
+	  {% csrf_token %}
+      <label for="username"><b><font color="white">Admin Name<font></b></label>
+	  <input type="text" placeholder="Enter your name" name="username" >
+
+      <label for="id"><b>ID</b></label>
+      <input type="text" placeholder="Enter Template ID" name="id" >
+	  <br><br>
+      <button class="btn" type="Upload" >Consolify it!</button>
+    </div>
+  </form><br>
+{% endblock %}
