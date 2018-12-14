@@ -23,37 +23,30 @@
 			.btn:hover {
 			opacity: 1;
 			}
-		.container{
+		.container_intro{
+			width: 98%;
 			position: absolute;
-			bottom: 220;
-			right: 520;
-			margin: 30px;
-			padding: 16px;
+			top: 50%;
 			text-align: center;
 			}
-		.container2{
+		.container_desc{
 			position: absolute;
-			bottom: 200;
-			right: 580;
-			margin: 30px;
-			padding: 16px;
+			top: 62%;
+			width: 98%;
 			text-align: center;			}
-		.container3{
+		.container_image{
 			position: absolute;
-			top: 150;
-			left: 600;
-			margin: 40px;
+			top: 50%;
+			left: 53%;
+			margin: -170px 0 0 -150px;
 			max-width: 400px;
 			letter-spacing: 1px;
 			}	
-		.container4{
+		.container_footer{
 			position: absolute;
-			bottom: 5;
-			margin: 4px;
-			width: 95%;
-			letter-spacing: 1px;
+			top: 90%;
+			width: 98%;
 			text-align: center;	
-			text-color: white;
 			}
 			input[type=text]{
 			width: 100%;
@@ -132,18 +125,19 @@
 	  </div>
   </div>
 </div>
-<div class="container3">
+
+<div class="container_image">
 	<img src="{% static 'tiger.jpg' %}" width=200 />
 </div>
-<div class="container">
+<div class="container_intro">
 	<h1 style="font-size:50px;"><b><font color="white">Hi, I am Dj Behera</font></b></h1>
 </div> 
-<div class="container2">
+<div class="container_desc">
 	<h2><i><font color="white">Welcome to my personal blog</font></i></h2>
 </div> 
- </script>
- <div class="container4">
+<div class="container_footer">
 	<p><font color="white">Dj © 2018. All Right Reserved</font></p>
- </div>
+</div>
+
 </body>
 </html>
